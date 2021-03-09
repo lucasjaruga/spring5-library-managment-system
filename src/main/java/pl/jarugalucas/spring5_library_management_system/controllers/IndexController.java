@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/library")
 public class IndexController {
 
-    @RequestMapping("/mainpage")
+    @RequestMapping("/menu")
     public String index(Model model){
-
-        return "mainpage";
+        return "menu";
     }
 }
