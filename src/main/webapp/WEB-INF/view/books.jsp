@@ -18,9 +18,11 @@
     <div id="content">
 
         <input type="button" value="Add a new book"
+               onclick="window.location.href='newBook'; return false;"
                class="add-button" />
 
         <input type="button" value="Go to Main Menu"
+               onclick="window.location.href='menu'; return false;"
                class="add-button" />
 
         <table>

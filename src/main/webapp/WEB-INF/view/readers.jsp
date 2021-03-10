@@ -6,6 +6,8 @@
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/generalStyle.css" />
 </head>
 
+<html>
+
 <body>
 
 <div id="wrapper">
@@ -18,9 +20,11 @@
     <div id="content">
 
         <input type="button" value="Add a new Reader"
+               onclick="window.location.href='/reader/newReader'; return false;"
                class="add-button" />
 
         <input type="button" value="Go to Main Menu"
+               onclick="window.location.href='/library/menu'; return false;"
                class="add-button" />
 
         <table>

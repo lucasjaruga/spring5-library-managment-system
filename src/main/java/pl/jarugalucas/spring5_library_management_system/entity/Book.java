@@ -1,6 +1,7 @@
 package pl.jarugalucas.spring5_library_management_system.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -96,5 +97,13 @@ public class Book {
                 ", availableAmount=" + availableAmount +
                 ", authors=" + authors +
                 '}';
+    }
+
+    public void addAuthor (Author author) {
+        if(authors.isEmpty()){
+            authors = new ArrayList<>();
+        }
+
+        authors.add(author);
     }
 }

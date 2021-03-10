@@ -1,1 +1,1 @@
-<% response.sendRedirect("library/menu"); %>
+<% response.sendRedirect("/library/menu"); %>

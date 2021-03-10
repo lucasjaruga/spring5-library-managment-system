@@ -20,9 +20,11 @@
     <div id="content">
 
         <input type="button" value="List of Books"
+               onclick="window.location.href='listOfBooks'; return false;"
                class="add-button" />
 
         <input type="button" value="List of Readers"
+               onclick="window.location.href='listOfReaders'; return false;"
                class="add-button" />
 
     </div>
