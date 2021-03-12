@@ -32,9 +32,18 @@ public class ReaderController {
     }
 
     @GetMapping("/updateReader")
-    public String updateReader(@RequestParam("reader") Reader reader){
+    public String updateReader(@RequestParam("readerId") int id, Model model){
 
+        Reader reader = readerService.getReader(id);
+        model.addAttribute("reader", reader);
 
         return "readerForm";
+    }
+
+    @GetMapping("/deleteReader")
+    public String deleteReader(@RequestParam("readerId") int id){
+
+        readerService.deleteReader(id);
+        return "redirect:/library/listOfReaders";
     }
 }

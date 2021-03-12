@@ -8,4 +8,6 @@ public interface ReaderService {
 
     public void saveReader(Reader reader);
     public List<Reader> getReaders();
+    public Reader getReader(int id);
+    public void deleteReader(int id);
 }

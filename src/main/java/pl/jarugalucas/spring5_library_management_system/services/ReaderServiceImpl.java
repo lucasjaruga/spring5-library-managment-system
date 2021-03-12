@@ -29,4 +29,17 @@ public class ReaderServiceImpl implements ReaderService {
         List<Reader> readers = readerDAO.getReaders();
         return readers;
     }
+
+    @Override
+    @Transactional
+    public Reader getReader(int id) {
+        Reader reader = readerDAO.getReader(id);
+        return reader;
+    }
+
+    @Override
+    @Transactional
+    public void deleteReader(int id) {
+        readerDAO.deleteReader(id);
+    }
 }

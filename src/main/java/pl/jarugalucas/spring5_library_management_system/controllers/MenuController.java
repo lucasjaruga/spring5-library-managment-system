@@ -4,10 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.jarugalucas.spring5_library_management_system.entity.Reader;
 import pl.jarugalucas.spring5_library_management_system.services.ReaderService;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/library")
@@ -32,9 +29,7 @@ public class MenuController {
     @GetMapping("/listOfReaders")
     public String getListOfReaders(Model model) {
 
-        List<Reader> readers = readerService.getReaders();
-
-        model.addAttribute("readers", readers);
+        model.addAttribute("readers", readerService.getReaders());
         return "readersList";
     }
 }

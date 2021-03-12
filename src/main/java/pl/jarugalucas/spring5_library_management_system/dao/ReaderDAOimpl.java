@@ -28,11 +28,26 @@ public class ReaderDAOimpl implements ReaderDAO {
     }
 
     @Override
+    public Reader getReader(int id) {
+
+        Session currentSession = sessionFactory.getCurrentSession();
+        Reader reader = currentSession.get(Reader.class, id);
+        return reader;
+    }
+
+    @Override
     public void saveReader(Reader reader) {
 
         // get the current Hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
         // save reader
-        currentSession.save(reader);
+        currentSession.saveOrUpdate(reader);
+    }
+
+    @Override
+    public void deleteReader(int id) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Reader reader = currentSession.get(Reader.class, id);
+        currentSession.delete(reader);
     }
 }

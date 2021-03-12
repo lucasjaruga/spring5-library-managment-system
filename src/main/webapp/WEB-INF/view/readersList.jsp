@@ -47,6 +47,11 @@
                         <c:param name="readerId" value="${reader.id}" />
                     </c:url>
 
+                    <!-- construct an "delete" link with customer id -->
+                    <c:url var="deleteLink" value="/reader/deleteReader">
+                        <c:param name="readerId" value="${reader.id}" />
+                    </c:url>
+
                     <tr>
                         <td>${reader.firstName}</td>
                         <td>${reader.lastName}</td>
@@ -59,7 +64,8 @@
                             |
                             <a href="${updateLink}">Update</a>
                             |
-                            <a>Delete</a>
+                            <a href="${deleteLink}"
+                               onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false ">Delete</a>
                         </td>
 
                     </tr>
