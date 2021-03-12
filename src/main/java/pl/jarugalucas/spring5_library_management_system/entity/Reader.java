@@ -21,10 +21,10 @@ public class Reader {
     @Column(name = "mobile")
     private String mobile;
 
-    // TODO implement not allowing to delete Reader if he/she has any books. They must be returned to library.
+    /*// TODO implement not allowing to delete Reader if he/she has any books. They must be returned to library.
     @OneToMany (mappedBy = "reader",
                 cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST, CascadeType.REFRESH})
-    private List<Book> books;
+    private List<Book> books;*/
 
     public Reader () {
     }
@@ -76,13 +76,13 @@ public class Reader {
         this.mobile = mobile;
     }
 
-    public List<Book> getBooks() {
+    /*public List<Book> getBooks() {
         return books;
     }
 
     public void setBooks(List<Book> books) {
         this.books = books;
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -92,15 +92,14 @@ public class Reader {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", mobile='" + mobile + '\'' +
-                ", books=" + books +
                 '}';
     }
 
-    public void addBook(Book book) {
+    /*public void addBook(Book book) {
         if(books.isEmpty()){
             books = new ArrayList<>();
         }
 
         books.add(book);
-    }
+    }*/
 }

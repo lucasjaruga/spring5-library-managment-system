@@ -5,6 +5,7 @@ import pl.jarugalucas.spring5_library_management_system.dao.ReaderDAO;
 import pl.jarugalucas.spring5_library_management_system.entity.Reader;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class ReaderServiceImpl implements ReaderService {
@@ -19,5 +20,13 @@ public class ReaderServiceImpl implements ReaderService {
     @Transactional
     public void saveReader(Reader reader) {
         readerDAO.saveReader(reader);
+    }
+
+    @Override
+    @Transactional
+    public List<Reader> getReaders() {
+
+        List<Reader> readers = readerDAO.getReaders();
+        return readers;
     }
 }

@@ -26,10 +26,10 @@ public class Book {
                 inverseJoinColumns = @JoinColumn(name = "author_id"))
     private List<Author> authors;
 
-    @ManyToOne (fetch = FetchType.LAZY,
+    /*@ManyToOne (fetch = FetchType.LAZY,
                 cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn (name = "reader_id")
-    private Reader reader;
+    private Reader reader;*/
 
     public Book () {
     }
@@ -80,13 +80,13 @@ public class Book {
         this.authors = authors;
     }
 
-    public Reader getReader() {
+    /*public Reader getReader() {
         return reader;
     }
 
     public void setReader(Reader reader) {
         this.reader = reader;
-    }
+    }*/
 
     @Override
     public String toString() {

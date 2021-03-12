@@ -4,10 +4,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pl.jarugalucas.spring5_library_management_system.entity.Reader;
+import pl.jarugalucas.spring5_library_management_system.services.ReaderService;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/library")
 public class MenuController {
+
+    private final ReaderService readerService;
+
+    public MenuController(ReaderService readerService) {
+        this.readerService = readerService;
+    }
 
     @RequestMapping("/menu")
     public String index(){
@@ -15,14 +25,16 @@ public class MenuController {
     }
 
     @GetMapping("/listOfBooks")
-    public String getListOfBooks(Model model){
-
+    public String getListOfBooks(){
         return "books";
     }
 
     @GetMapping("/listOfReaders")
     public String getListOfReaders(Model model) {
 
-        return "readers";
+        List<Reader> readers = readerService.getReaders();
+
+        model.addAttribute("readers", readers);
+        return "readersList";
     }
 }

@@ -2,10 +2,7 @@ package pl.jarugalucas.spring5_library_management_system.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.jarugalucas.spring5_library_management_system.entity.Reader;
 import pl.jarugalucas.spring5_library_management_system.services.ReaderService;
 
@@ -32,5 +29,12 @@ public class ReaderController {
 
         readerService.saveReader(reader);
         return "redirect:/library/listOfReaders";
+    }
+
+    @GetMapping("/updateReader")
+    public String updateReader(@RequestParam("reader") Reader reader){
+
+
+        return "readerForm";
     }
 }
