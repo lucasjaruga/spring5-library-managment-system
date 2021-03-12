@@ -25,9 +25,9 @@
 </div>
 
 <div id="container">
-    <h3>Add Reader</h3>
+    <h3>Add Book</h3>
 
-    <form:form action="/readers/saveReader" modelAttribute="reader"
+    <form:form action="/books/saveBook" modelAttribute="book"
                method="POST">
 
         <!-- need to associate this data with customer id -->
@@ -36,23 +36,23 @@
         <table>
             <tbody>
             <tr>
-                <td><label>First name:</label></td>
-                <td><form:input path="firstName" /></td>
+                <td><label>Title:</label></td>
+                <td><form:input path="title" /></td>
             </tr>
 
             <tr>
-                <td><label>Last name:</label></td>
-                <td><form:input path="lastName" /></td>
+                <td><label>Authors:</label></td>
+                <td><form:input path="authors" /></td>
             </tr>
 
             <tr>
-                <td><label>Email:</label></td>
-                <td><form:input path="email" /></td>
+                <td><label>Publication date:</label></td>
+                <td><form:input path="publicationDate" /></td>
             </tr>
 
             <tr>
-                <td><label>Mobile:</label></td>
-                <td><form:input path="mobile" /></td>
+                <td><label>Available amount:</label></td>
+                <td><form:input path="availableAmount" /></td>
             </tr>
 
             <tr>

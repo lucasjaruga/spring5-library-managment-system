@@ -4,16 +4,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.jarugalucas.spring5_library_management_system.entity.Reader;
-import pl.jarugalucas.spring5_library_management_system.services.ReaderService;
+import pl.jarugalucas.spring5_library_management_system.services.ReadersService;
 
 @Controller
-@RequestMapping("/reader")
-public class ReaderController {
+@RequestMapping("/readers")
+public class ReadersController {
 
-    private final ReaderService readerService;
+    private final ReadersService readersService;
 
-    public ReaderController(ReaderService readerServiceImpl) {
-        this.readerService = readerServiceImpl;
+    public ReadersController(ReadersService readersServiceImpl) {
+        this.readersService = readersServiceImpl;
     }
 
     @GetMapping("/newReader")
@@ -27,14 +27,14 @@ public class ReaderController {
     @PostMapping("/saveReader")
     public String saveReader(@ModelAttribute("reader") Reader reader){
 
-        readerService.saveReader(reader);
+        readersService.saveOrUpdateReader(reader);
         return "redirect:/library/listOfReaders";
     }
 
     @GetMapping("/updateReader")
     public String updateReader(@RequestParam("readerId") int id, Model model){
 
-        Reader reader = readerService.getReader(id);
+        Reader reader = readersService.getReader(id);
         model.addAttribute("reader", reader);
 
         return "readerForm";
@@ -43,7 +43,7 @@ public class ReaderController {
     @GetMapping("/deleteReader")
     public String deleteReader(@RequestParam("readerId") int id){
 
-        readerService.deleteReader(id);
+        readersService.deleteReader(id);
         return "redirect:/library/listOfReaders";
     }
 }

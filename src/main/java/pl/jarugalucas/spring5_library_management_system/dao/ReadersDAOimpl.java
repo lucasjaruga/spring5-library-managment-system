@@ -9,11 +9,11 @@ import pl.jarugalucas.spring5_library_management_system.entity.Reader;
 import java.util.List;
 
 @Repository
-public class ReaderDAOimpl implements ReaderDAO {
+public class ReadersDAOimpl implements ReadersDAO {
 
     private final SessionFactory sessionFactory;
 
-    public ReaderDAOimpl(SessionFactory sessionFactory) {
+    public ReadersDAOimpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
@@ -36,7 +36,7 @@ public class ReaderDAOimpl implements ReaderDAO {
     }
 
     @Override
-    public void saveReader(Reader reader) {
+    public void saveOrUpdateReader(Reader reader) {
 
         // get the current Hibernate session
         Session currentSession = sessionFactory.getCurrentSession();

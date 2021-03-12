@@ -22,7 +22,7 @@
             <div id="content">
 
                 <input type="button" value="Add a new Reader"
-                       onclick="window.location.href='/reader/newReader'; return false;"
+                       onclick="window.location.href='/readers/newReader'; return false;"
                        class="add-button" />
 
                 <input type="button" value="Go to Main Menu"
@@ -43,12 +43,12 @@
                     <c:forEach var="reader" items="${readers}" >
 
                     <!-- construct an "update" link with customer id -->
-                    <c:url var="updateLink" value="/reader/updateReader">
+                    <c:url var="updateLink" value="/readers/updateReader">
                         <c:param name="readerId" value="${reader.id}" />
                     </c:url>
 
                     <!-- construct an "delete" link with customer id -->
-                    <c:url var="deleteLink" value="/reader/deleteReader">
+                    <c:url var="deleteLink" value="/readers/deleteReader">
                         <c:param name="readerId" value="${reader.id}" />
                     </c:url>
 

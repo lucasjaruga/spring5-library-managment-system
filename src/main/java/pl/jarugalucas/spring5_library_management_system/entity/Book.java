@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "book")
+@Table(name = "books")
 public class Book {
 
     @Id
@@ -14,17 +14,12 @@ public class Book {
     private int id;
     @Column(name = "title")
     private String title;
+    @Column(name="authors")
+    private String authors;
     @Column(name = "publication_date")
     private String publicationDate;
     @Column(name = "available_amount")
     private Integer availableAmount;
-
-    @ManyToMany (fetch = FetchType.LAZY,
-                 cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinTable (name = "book_author",
-                joinColumns = @JoinColumn(name = "book_id"),
-                inverseJoinColumns = @JoinColumn(name = "author_id"))
-    private List<Author> authors;
 
     /*@ManyToOne (fetch = FetchType.LAZY,
                 cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST, CascadeType.REFRESH})
@@ -56,6 +51,14 @@ public class Book {
         this.title = title;
     }
 
+    public String getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(String authors) {
+        this.authors = authors;
+    }
+
     public String getPublicationDate() {
         return publicationDate;
     }
@@ -72,14 +75,6 @@ public class Book {
         this.availableAmount = availableAmount;
     }
 
-    public List<Author> getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(List<Author> authors) {
-        this.authors = authors;
-    }
-
     /*public Reader getReader() {
         return reader;
     }
@@ -93,17 +88,9 @@ public class Book {
         return "Book{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
+                ", authors='" + authors + '\'' +
                 ", publicationDate='" + publicationDate + '\'' +
                 ", availableAmount=" + availableAmount +
-                ", authors=" + authors +
                 '}';
-    }
-
-    public void addAuthor (Author author) {
-        if(authors.isEmpty()){
-            authors = new ArrayList<>();
-        }
-
-        authors.add(author);
     }
 }
