@@ -31,7 +31,7 @@
                method="POST">
 
         <!-- need to associate this data with customer id -->
-        <form:hidden path="id"/>
+            <form:hidden path="id"/>
 
         <table>
             <tbody>
@@ -64,6 +64,16 @@
         </table>
 
     </form:form>
+
+    <p>
+        <a href="${pageContext.request.contextPath}/library/listOfBooks">Back
+            to List of Books</a>
+    </p>
+
+    <p>
+        <a href="${pageContext.request.contextPath}/library/menu">Back
+            to Main Menu</a>
+    </p>
 
 </div>
 

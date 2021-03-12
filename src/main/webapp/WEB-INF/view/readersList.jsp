@@ -14,7 +14,7 @@
 
         <div id="wrapper">
             <div id="header">
-                <h2>Library Management System</h2>
+                <h2>Library Management System - List of Readers</h2>
             </div>
         </div>
 

@@ -65,6 +65,16 @@
 
     </form:form>
 
+    <p>
+        <a href="${pageContext.request.contextPath}/library/listOfReaders">Back
+            to List of Readers</a>
+    </p>
+
+    <p>
+        <a href="${pageContext.request.contextPath}/library/menu">Back
+            to Main Menu</a>
+    </p>
+
 </div>
 
 </body>
